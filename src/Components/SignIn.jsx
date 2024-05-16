@@ -1,58 +1,57 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useState } from 'react';
 import '../css/SignIn.css';
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 
 const SignIn = () => {
     const [userName, setUserName] = useState('');
+    const [userNameError, setUserNameError] = useState('');
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
 
     const handleUserName = (e) => {
-        setUserName(e.target.value);
-        console.log(userName);
-    }
+        const value = e.target.value;
+        setUserName(value);
+        value === '' ? setUserNameError('This field should not be empty') : setUserNameError('');
+    };
 
-    
     const validatePassword = (e) => {
         const value = e.target.value;
         setPassword(value);
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
-        
+
         if (!passwordRegex.test(value)) {
-        setPasswordError('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+            setPasswordError('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
         } else {
-        setPasswordError('');
+            setPasswordError('');
         }
-        console.log(password)
     };
+
     return (
         <div className="background">
             <div className='sign-in-container'>
-            <h2> Sign In</h2>
-            <TextField 
-                fullWidth 
-                id="userName"
-                label="Enter Your Username" 
-                variant="standard" 
-                className='my-3' 
-                required 
-                onChange={handleUserName}/>
-            <TextField 
-                fullWidth 
-                id="password" 
-                label="Enter Your Password" 
-                variant="standard" 
-                className='my-3' 
-                type='password' 
-                required 
-                onChange={validatePassword}
-                error={!!passwordError} 
-                helperText={passwordError}/>
-            <Button variant="contained" className='my-3' required>Sign In</Button>
+                <h2>Sign In</h2>
+
+                <input
+                    type='text'
+                    className={`text-box ${userNameError ? 'error' : ''}`}
+                    placeholder='Enter Your Username'
+                    onChange={handleUserName}
+                />
+                {userNameError && <p className="error-text">{userNameError}</p>}
+
+                <input
+                    type='password'
+                    className={`text-box ${passwordError ? 'error' : ''}`}
+                    placeholder='Enter Your Password'
+                    onChange={validatePassword}
+                />
+                {passwordError && <p className="error-text">{passwordError}</p>}
+
+                <Button variant="contained" className='mt-4' disabled={!!userNameError || !!passwordError}>
+                    Sign In
+                </Button>
+            </div>
         </div>
-        </div>
-        
     );
 };
 

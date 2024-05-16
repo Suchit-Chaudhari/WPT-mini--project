@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './Components/NavigationBar';
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp';
 
 function App() {
   return (
@@ -18,6 +17,7 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/sign-in' element={<SignIn/>}></Route>
+          <Route path='/sign-up' element={<SignUp/>}></Route>
           {/* <Route path='/All-news' element={<AllNews></AllNews>}></Route> */}
           {/* <Route path='/weather' element={<Weather/>}></Route> */}
         </Routes>

@@ -26,6 +26,9 @@ const NavigationBar = () => {
               <LinkContainer to={'/sign-in'}>
                 <Nav.Link className="mx-2">Sign-in</Nav.Link>
               </LinkContainer>
+              <LinkContainer to={'/sign-up'}>
+                <Nav.Link className="mx-2">Sign-Up</Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
