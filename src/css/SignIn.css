@@ -1,0 +1,23 @@
+.sign-in-container{
+    margin: 0 auto;    
+    width: 400px;
+    background: rgb(255, 255, 255, 0.95);
+    padding: 3%;
+    position: relative;
+    top: 40px;
+    border-radius: 10px;
+}
+.background{
+    background: url('https://image.lexica.art/full_webp/dca9a63f-0312-4d1d-9a49-22586d61cccb');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90.6vh;
+    margin: none;
+}
+h2{
+    text-align: center;
+}
+Button{
+    width: 100%;
+    
+}
