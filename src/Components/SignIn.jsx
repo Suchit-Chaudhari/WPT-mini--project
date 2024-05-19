@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import '../css/SignIn.css';
 import { Button, TextField, Typography } from '@mui/material';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Context/AuthContext';
 const SignIn = () => {
     const [userName, setUserName] = useState('');
     const [userNameError, setUserNameError] = useState('');
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [loginError, setLoginError] = useState('');
+    const [loginSuccess, setLoginSuccess] = useState('');
+    
+    const navigate = useNavigate();
+    const {login} = useAuth();
 
     const handleUserName = (e) => {
         const value = e.target.value;
@@ -17,12 +24,32 @@ const SignIn = () => {
     const validatePassword = (e) => {
         const value = e.target.value;
         setPassword(value);
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+        value === ''? setPasswordError('password should not be empty') : setPasswordError('');
+    };
 
-        if (!passwordRegex.test(value)) {
-            setPasswordError('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
-        } else {
-            setPasswordError('');
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post('http://localhost:6800/customer/login', {
+                "username": userName,
+                "password": password
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            login(response.data.result);
+            setLoginSuccess('Login successful!');
+            setLoginError('');
+            navigate('/');
+        } catch (error) {
+            if (error.response) {
+                setLoginError('incorrect userrname or password');
+                console.log(loginError)
+            } else {
+                setLoginError('An error occurred. Please try again.');
+                console.log(loginError);    
+            }
+            setLoginSuccess('');
         }
     };
 
@@ -47,9 +74,13 @@ const SignIn = () => {
                 />
                 {passwordError && <p className="error-text">{passwordError}</p>}
 
-                <Button variant="contained" className='mt-4' disabled={!!userNameError || !!passwordError}>
+
+                {loginError && <p className='error-text'>{loginError}</p>}
+                <Button variant="contained" className='mt-4' disabled={!!userNameError || !!passwordError} onClick={handleLogin}>
                     Sign In
                 </Button>
+                <br />
+                
             </div>
         </div>
     );

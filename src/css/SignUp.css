@@ -1,47 +1,68 @@
 .sign-up-container {
     margin: 0 auto;
     width: 400px;
-    background: rgb(255, 255, 255);
+    background: #ffffff;
     padding: 2%;
     position: relative;
-    top: 40px;
+    top: 0px;
     border-radius: 10px;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .background {
-    background: url('https://image.lexica.art/full_webp/dca9a63f-0312-4d1d-9a49-22586d61cccb');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 90.6vh;
-    margin: none;
+    /* background: linear-gradient(135deg, #e0eafc, #cfdef3); Gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 h2 {
     text-align: center;
+    color: #333; /* Darker color for better contrast */
+    font-family: 'Arial', sans-serif;
 }
 
 Button {
     width: 100%;
     margin-top: 15px;
+    background-color: #007bff; /* Blue background for buttons */
+    color: #fff; /* White text color for buttons */
+    border-radius: 5px;
 }
+
+
 
 .text-box {
     width: 100%;
+    margin-top: 0;
     margin-bottom: 16px;
     border: none;
     outline: none;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #333; /* Darker border for better visibility */
     height: 25px;
-    border-radius: 0;
+    border-radius: 5px;
+    padding: 5px; /* Added padding for better spacing */
+    background: transparent; /* Light grey background for input boxes */
+    transition: border-color 0.3s ease-in-out;
+}
+
+.text-box:focus {
+    border-bottom-color: #007bff; /* Blue border on focus */
 }
 
 .text-box.error {
-    border-color: red;
+    border-bottom-color: red;
 }
 
 .error-text {
     color: red;
     margin: -12px 0 12px;
     font-size: 0.875em;
+    font-family: 'Arial', sans-serif;
+}
+
+input{
+    background: transparent;
 }

@@ -7,6 +7,8 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
+import Footer from './Components/Footer';
+import EditUser from './Components/EditUser';
 
 function App() {
   return (
@@ -17,10 +19,13 @@ function App() {
           <Route path='/about' element={<About/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/sign-in' element={<SignIn/>}></Route>
+          
           <Route path='/sign-up' element={<SignUp/>}></Route>
+          <Route path='/editUser' element={<EditUser/>}></Route>
           {/* <Route path='/All-news' element={<AllNews></AllNews>}></Route> */}
           {/* <Route path='/weather' element={<Weather/>}></Route> */}
         </Routes>
+        <Footer />
       </BrowserRouter>
   );
 }
