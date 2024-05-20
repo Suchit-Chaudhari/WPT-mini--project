@@ -51,6 +51,7 @@ const SignUp = () => {
         }
     };
     const handleFirstName = (e) => {
+        
         const value = e.target.value;
         setFirstName(value);
         value === '' ? setFirstNameError('This field should not be empty') : setFirstNameError('');
@@ -138,6 +139,7 @@ const SignUp = () => {
                         !!firstNameError || !!lastNameError || !!userNameError || !!emailError || !!passwordError
                     }
                     onClick={handleSubmit}
+
                 >
                     Sign Up
                 </Button>

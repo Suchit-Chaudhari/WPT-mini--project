@@ -37,6 +37,7 @@ const SignIn = () => {
                     'Content-Type': 'application/json'
                 }
             });
+            
             login(response.data.result);
             setLoginSuccess('Login successful!');
             setLoginError('');

@@ -54,21 +54,22 @@ import Suchit from '../assets/images/Suchit Chaudhari.jpg'
 
                 At Star Real Estate Pvt Ltd, client satisfaction reigns supreme, underpinned by our proactive strategies aimed at delivering unparalleled service and performance in the real estate industry. Our commitment to excellence continues to propel us forward as a trusted partner in the ever-evolving landscape of property management and brokerage services.
             </p><br></br><br></br><br></br>
-            <h2>Our Vision</h2><br></br>
-            <ListGroup> 
-                <ListGroup.Item>To lead with excellence in property management, prioritizing client satisfaction.</ListGroup.Item>
-                <ListGroup.Item>To innovate and set new industry standards through pioneering approaches.</ListGroup.Item>
-                <ListGroup.Item>To foster thriving, sustainable communities with our holistic management style.</ListGroup.Item>
-                <ListGroup.Item>To leverage cutting-edge technology for enhanced efficiency and effectiveness.</ListGroup.Item>
-                <ListGroup.Item>To empower our team through a culture of collaboration and growth.</ListGroup.Item>
-            </ListGroup><br></br><br></br><br></br><br></br>
+            <h2 style={{ float: 'left' }}>Our Vision</h2><br></br><br />
+
+            <ul > 
+                <li>To lead with excellence in property management, prioritizing client satisfaction.</li>
+                <li>To innovate and set new industry standards through pioneering approaches.</li>
+                <li>To foster thriving, sustainable communities with our holistic management style.</li>
+                <li>To leverage cutting-edge technology for enhanced efficiency and effectiveness.</li>
+                <li>To empower our team through a culture of collaboration and growth.</li>
+            </ul><br></br><br></br><br></br><br></br>
             <h2>Our Missions</h2><br></br>
             <ListGroup>
-                <ListGroup.Item>Empowering individuals and businesses through tailored property management solutions.</ListGroup.Item>
-                <ListGroup.Item>Upholding excellence in every transaction, delivering seamless processes and exceptional outcomes.</ListGroup.Item>
-                <ListGroup.Item>Crafting community-centric solutions for vibrant, sustainable neighborhoods.</ListGroup.Item>
-                <ListGroup.Item>Driving innovation to anticipate and address future real estate challenges.</ListGroup.Item>
-                <ListGroup.Item>Integrating sustainability into property management practices for a greener future.</ListGroup.Item>
+                <li>Empowering individuals and businesses through tailored property management solutions.</li>
+                <li>Upholding excellence in every transaction, delivering seamless processes and exceptional outcomes.</li>
+                <li>Crafting community-centric solutions for vibrant, sustainable neighborhoods.</li>
+                <li>Driving innovation to anticipate and address future real estate challenges.</li>
+                <li>Integrating sustainability into property management practices for a greener future.</li>
 
             </ListGroup>
 
