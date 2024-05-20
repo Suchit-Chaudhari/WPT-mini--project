@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../css/SignUp.css';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 const SignUp = () => {
     const [firstName, setFirstName] = useState('');
@@ -14,36 +16,40 @@ const SignUp = () => {
     const [emailError, setEmailError] = useState('');
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
+        // Check if any required field is empty
+        if (!firstName || !lastName || !userName || !email || !password) {
+            console.error('Please fill in all required fields.');
+            alert("enter all fields");  
+            return;
+        }
+    
         const requestBody = {
-            username: userName,
-            email: email,
-            password: password,
-            first_name: firstName,
-            last_name: lastName,
+            "username": userName,
+            "email": email,
+            "password": password,
+            "first_name": firstName,
+            "last_name": lastName,
         };
-
+    
         try {
-            const response = await fetch('http://localhost:6800/customer/', {
-                method: 'POST',
-                body: JSON.stringify(requestBody),
-            });
-
-            if (response.ok) {
+            const response = await axios.post('http://localhost:6800/customer/', requestBody);
+    
+            if (response.status === 200) {
                 navigate('/sign-in');
             } else {
-                const errorData = await response.json();
+                const errorData = response.data;
                 console.error('Error:', errorData);
             }
         } catch (error) {
             console.error('Error:', error);
         }
     };
-
     const handleFirstName = (e) => {
         const value = e.target.value;
         setFirstName(value);
@@ -88,6 +94,7 @@ const SignUp = () => {
                     className={`text-box ${firstNameError ? 'error' : ''}`}
                     placeholder='Enter Your First Name'
                     onChange={handleFirstName}
+                    required    
                 />
                 {firstNameError && <p className="error-text">{firstNameError}</p>}
 
@@ -96,6 +103,7 @@ const SignUp = () => {
                     className={`text-box ${lastNameError ? 'error' : ''}`}
                     placeholder='Enter Your Last Name'
                     onChange={handleLastName}
+                    required
                 />
                 {lastNameError && <p className="error-text">{lastNameError}</p>}
 
