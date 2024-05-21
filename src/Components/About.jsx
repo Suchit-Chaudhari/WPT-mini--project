@@ -46,7 +46,7 @@ import Suchit from '../assets/images/Suchit Chaudhari.jpg'
                     </Card>
                 </Col>
             </Row><br></br><br></br><br></br>
-            <h2>Our Company</h2><br></br>
+            <h2 style={{ float: 'left' }}>Our Company</h2><br></br><br />
             <p>
                 Founded in 2010 and headquartered in Mumbai - 400 051, Star Real Estate Pvt Ltd has emerged as a distinguished leader in the realm of Commercial and Residential Property Management, Facility, and Commercial Brokerage Services. With a robust clientele encompassing private investors, institutions, corporations, not-for-profits, home owner associations, and cooperatives, we pride ourselves on our closely held Corporation structure, driven by shareholder ownership and operations.</p>
 
@@ -63,7 +63,7 @@ import Suchit from '../assets/images/Suchit Chaudhari.jpg'
                 <li>To leverage cutting-edge technology for enhanced efficiency and effectiveness.</li>
                 <li>To empower our team through a culture of collaboration and growth.</li>
             </ul><br></br><br></br><br></br><br></br>
-            <h2>Our Missions</h2><br></br>
+            <h2 style={{ float: 'left' }}>Our Missions</h2><br></br><br />
             <ListGroup>
                 <li>Empowering individuals and businesses through tailored property management solutions.</li>
                 <li>Upholding excellence in every transaction, delivering seamless processes and exceptional outcomes.</li>
@@ -72,7 +72,7 @@ import Suchit from '../assets/images/Suchit Chaudhari.jpg'
                 <li>Integrating sustainability into property management practices for a greener future.</li>
 
             </ListGroup>
-
+                <br /><br />
 
         </Container>
 
