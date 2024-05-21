@@ -10,9 +10,9 @@ const PCard = ({ property }) => {
       </div>
       <div className="card-details">
         <h2>{property.Type}</h2>
-        <p><strong>Price:</strong> ${property.Price}</p>
+        {/* <p><strong>Price:</strong> ${property.Price}</p> */}
         <p><strong>Location:</strong> {property.Location}</p>
-        <p><strong>Contact:</strong> {property.agent_contact}</p>
+        {/* <p><strong>Contact:</strong> {property.agent_contact}</p> */}
       </div>
 
       </Link>

@@ -2,12 +2,16 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Card, Row, Col } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import CustomCarousel from './CustomCarousel';
+// import Carousel from './CustomCarousel';
 
 const Home = () => {
   return (
     <Container>
        
-       <Image src="https://www.bullmenrealty.com/uploads/slider/917godrej-nirvaan-amenities-features261.jpg" fluid />;
+       {/* <Image src="https://www.bullmenrealty.com/uploads/slider/917godrej-nirvaan-amenities-features261.jpg" fluid /> */}
+       <br />
+      <CustomCarousel />
       <br></br><br></br><br></br>
 
       <h2>Welcome to Star Real Estate Private Limited</h2><br></br>

@@ -40,6 +40,7 @@ const handleUpdate = async (e) => {
 
         if (response.status === 200) {
             console.log('User updated successfully');
+            
             // Optionally, you can navigate to another page or perform additional actions upon successful update
         } else {
             console.error('Failed to update user');

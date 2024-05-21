@@ -82,12 +82,7 @@ const Footer = () => {
                 <hr></hr>
 
                 <div className="sb_footer-below">
-                <div className="about_us">
-              <h2 className="about-us-heading">About Us</h2>
-             <p>
-             Star Estate Pvt Ltd is India's largest Integrated real estate marketplace, with category leadership presence across multiple touchpoints of consumer home ownership journey. With Urbanisation and rising disposable incomes as the core theme, Square Yards, with 8mn+ monthly traffic and ~USD 5bn+ GTV, is the largest and asset light proxy play to the growing residential demand story of India. One of the few Indian start ups to taste global success with presence in 100+ cities across 9 countries, Square Yards is at the forefront of tech adoption in the sector, with multiple patents across VR/AI domains.
-            </p>
-            </div>
+                
               
                     <div className="sb_footer-copyright">
                         <p>
